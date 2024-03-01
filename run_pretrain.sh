@@ -1,0 +1,29 @@
+python3 main_dino.py --arch video_dinov2_vitb14 \
+                    --out_dim 32000 \
+                    --momentum_teacher 0.9999 \
+                    --pretrained \
+                    --patch_size 14 \
+                    --norm_last_layer True \
+                    --use_bn_in_head False \
+                    --batch_size_per_gpu 16 \
+                    --epochs 500 \
+                    --warmup_epochs 30 \
+                    --warmup_teacher_temp_epochs 0 \
+                    --warmup_teacher_temp 0.01 \
+                    --teacher_temp 0.04 \
+                    --lr 3e-3 \
+                    --min_lr 1e-6 \
+                    --clip_grad 3.0 \
+                    --data_path /media/luke/Storage/Datasets/Littleton_Sample/ \
+                    --output_dir ./output \
+                    --saveckp_freq 50 \
+                    --use_fp16 False \
+                    --num_workers 4 \
+                    --seed 0 \
+                    --global_crops_size 98 196 \
+                    --local_crops_size 56 112 \
+                    --local_crops_number 0 \
+                    --freeze_last_layer 2 \
+                    --videos True \
+                    --num_frames 10 \
+                    --randwave True \
